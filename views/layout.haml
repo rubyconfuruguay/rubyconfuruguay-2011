@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title RubyConf Uruguay
+    %meta{ :"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
+    %meta{ :"http-equiv" => "Content-Language", :content => "es-UY" }
+    %link{ :rel => "stylesheet", :href => "/website.css", :type => "text/css" }
+    %link{ :rel => "home", :href => "/" }
+    %script{ :type => "text/javascript", :src => "http://use.typekit.com/wee6fcn.js" }
+    %script{ :type => "text/javascript" } try{Typekit.load();}catch(e){}
+  %body
+    #header
+      %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
+      %h2 Conferencia Regional de Ruby, Rails, y Metodologías Ágiles
+    #content
+      = yield
+    #footer
+      == Dínos #{email} o #{twitter}
