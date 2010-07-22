@@ -1,19 +1,30 @@
 !!!
 %html
   %head
-    %title RubyConf Uruguay
+    %title RubyConf Uruguay 2010
     %meta{ :"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
     %meta{ :"http-equiv" => "Content-Language", :content => "es-UY" }
+    %link{ :rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Cantarell:regular,bold", :type => "text/css" }
     %link{ :rel => "stylesheet", :href => "/website.css", :type => "text/css" }
     %link{ :rel => "home", :href => "/" }
     %script{ :type => "text/javascript", :src => "http://use.typekit.com/wee6fcn.js" }
     %script{ :type => "text/javascript" } try{Typekit.load();}catch(e){}
   %body
-    #header
+    %nav
+      %ul
+        %li= link_to "Para quiénes?",          "#audience"
+        %li= link_to "Cuándo?",                "#when"
+        %li= link_to "Dónde?",                 "#where"
+        %li= link_to "De qué se va a hablar?", "#speakers"
+        %li= link_to "Cómo me inscribo?",      "#register"
+        %li= link_to "Puedo ayudar?",          "#sponsors"
+
+    %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
       %h2 Conferencia Regional de Ruby, Rails, y Metodologías Ágiles
-    #content
+    %section#content
       = yield
-    #footer
-      %div ©2010 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
-      %div Dínos #{email} o #{twitter}
+    %footer
+      %p ©2010 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
+      %p Dínos #{email} o #{twitter}
+    = erb "analytics" if ENV["RACK_ENV"] == "production"
