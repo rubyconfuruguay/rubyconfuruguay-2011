@@ -27,4 +27,4 @@
     %footer
       %p ©2010 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
       %p Dínos #{email} o #{twitter}
-    = erb "analytics" if ENV["RACK_ENV"] == "production"
+    = erb :analytics if ENV["RACK_ENV"] == "production"
