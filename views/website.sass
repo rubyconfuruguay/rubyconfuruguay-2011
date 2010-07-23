@@ -1,29 +1,28 @@
-!dark_red = #942222
-!light_red = #e11f29
-!blue = #5293cc
-!dark_blue = !blue - #222
+$dark_red: #942222
+$light_red: #e11f29
+$blue: #5293cc
+$dark_blue: $blue - #222222
 
 html, body
   padding: 0
   margin: 0
   background: #5b5b5b
-  color: #fff
+  color: white
   font-family: "Cantarell", sans-serif
 
 a
-  color: #fff
+  color: white
   &:hover
-    background: #aaa
-    color: #333
+    background: #aaaaaa
+    color: #333333
   &:visited
-    color: #aaa
+    color: #aaaaaa
 
 header
-  background: #fff
+  background: white
   padding-top: 16px
-  color: #000
+  color: black
   display: block
-
   h1, h2
     text-align: center
     margin: 0
@@ -38,38 +37,36 @@ header
       background: url(/logo.png) no-repeat center center
   h2
     padding: 5px 0
-    background = !dark_red
-    border-bottom = 3px "solid" !light_red
-    color: #fff
-    font-family: museo-slab-1,museo-slab-2
+    background: $dark_red
+    border-bottom: 3px solid $light_red
+    color: white
+    font-family: museo-slab-1, museo-slab-2
 
 nav ul
   margin: 0 auto
   padding: 0
-  background = !dark_red
+  background: $dark_red
   list-style-type: none
   text-align: center
-  border-bottom = 2px "solid" !light_red
-
+  border-bottom: 2px solid $light_red
   li
     display: inline
     padding: 4px
-
   a
-    color: #fff
+    color: white
     padding: 3px 4px
     text-decoration: none
     text-transform: lowercase
     font-size: 14px
     cursor: pointer
     &:visited
-      color: #fff
+      color: white
     &:hover
-      background = !light_red
-      color: #fff
+      background: $light_red
+      color: white
 
 #welcome p
-  background = !blue
+  background: $blue
   padding: 8px 12px 12px
   margin: 28px -6px
   font-size: 28px
@@ -78,15 +75,14 @@ nav ul
   border-radius: 5px
   -moz-border-radius: 5px
   -webkit-border-radius: 5px
-  text-shadow = 1px 1px !dark_blue
+  text-shadow: 1px 1px $dark_blue
 
 section
   margin: 36px auto
   display: block
   width: 800px
-
   h2
-    background: #666
+    background: #666666
     padding: 6px 6px 6px 6px
     margin: 0 -6px
     text-shadow: 1px 1px #5b5b5b
@@ -95,7 +91,7 @@ footer
   display: block
   margin: 0 auto
   width: 812px
-  border-top: 1px solid #777
+  border-top: 1px solid #777777
   font-size: 14px
   padding: 8px 6px
   text-align: center

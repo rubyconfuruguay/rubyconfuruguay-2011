@@ -3,7 +3,7 @@ dependencies:
   haml: 
     group: 
     - :default
-    version: ">= 0"
+    version: ">= 3"
   sinatra: 
     group: 
     - :default
@@ -15,7 +15,7 @@ specs:
     version: 1.2.1
 - sinatra: 
     version: "1.0"
-hash: 0685469eceb77795eac09a3215389a102be4825a
+hash: 9c4cd13ba4f3347ef1a80266d01a5f74da5ad1fb
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
