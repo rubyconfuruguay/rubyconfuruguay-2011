@@ -1,8 +1,3 @@
-$dark_red: #942222
-$light_red: #e11f29
-$blue: #5293cc
-$dark_blue: $blue - #222222
-
 html, body
   padding: 0
   margin: 0
@@ -37,18 +32,18 @@ header
       background: url(/logo.png) no-repeat center center
   h2
     padding: 5px 0
-    background: $dark_red
-    border-bottom: 3px solid $light_red
+    background: #942222
+    border-bottom: 3px solid #e11f29
     color: white
     font-family: museo-slab-1, museo-slab-2
 
 nav ul
   margin: 0 auto
   padding: 0
-  background: $dark_red
+  background: #942222
   list-style-type: none
   text-align: center
-  border-bottom: 2px solid $light_red
+  border-bottom: 2px solid #e11f29
   li
     display: inline
     padding: 4px
@@ -62,20 +57,8 @@ nav ul
     &:visited
       color: white
     &:hover
-      background: $light_red
+      background: #e11f29
       color: white
-
-#welcome p
-  background: $blue
-  padding: 8px 12px 12px
-  margin: 28px -6px
-  font-size: 28px
-  line-height: 34px
-  text-align: center
-  border-radius: 5px
-  -moz-border-radius: 5px
-  -webkit-border-radius: 5px
-  text-shadow: 1px 1px $dark_blue
 
 section
   margin: 36px auto
@@ -97,3 +80,23 @@ footer
   text-align: center
   p
     margin: 0
+
+#welcome p
+  background: #5293cc
+  padding: 8px 12px 12px
+  margin: 28px -6px
+  font-size: 28px
+  line-height: 34px
+  text-align: center
+  border-radius: 5px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  text-shadow: 1px 1px #3071aa
+
+.pictures img
+  border: 1px solid #777
+  -moz-box-shadow: 4px 4px 0.5 #333
+  -webkit-box-shadow: 1px 1px 4px #333
+  margin-right: 21px
+  &:last-child
+    margin-right: 0
