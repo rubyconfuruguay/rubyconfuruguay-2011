@@ -20,8 +20,8 @@ module RubyConf
         :rel => "twitter", :class => "twitter"
     end
 
-    def email(address="hola@rubyconfuruguay.org")
-      link_to address, "mailto:#{address}", :class => "email", :rel => "email"
+    def email(text, address=text)
+      link_to text, "mailto:#{address}", :class => "email", :rel => "email"
     end
 
     def link_to(text, url, options={})
