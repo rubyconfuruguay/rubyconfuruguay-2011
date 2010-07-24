@@ -15,12 +15,11 @@ module RubyConf
       sass :website
     end
 
-    def twitter(text="sígannos en twitter")
-      link_to text, "http://twitter.com/rubyconfuruguay",
-        :rel => "twitter", :class => "twitter"
+    def twitter(text = "sígannos en twitter", user = "rubyconfuruguay")
+      link_to text, "http://twitter.com/#{user}", :rel => "twitter", :class => "twitter"
     end
 
-    def email(text, address=text)
+    def email(text = "envíennos un email", address = "info@rubyconfuruguay.org")
       link_to text, "mailto:#{address}", :class => "email", :rel => "email"
     end
 
