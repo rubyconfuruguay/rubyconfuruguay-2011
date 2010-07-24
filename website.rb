@@ -15,7 +15,7 @@ module RubyConf
       sass :website
     end
 
-    def twitter(text="síguenos en twitter")
+    def twitter(text="sígannos en twitter")
       link_to text, "http://twitter.com/rubyconfuruguay",
         :rel => "twitter", :class => "twitter"
     end
