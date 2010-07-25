@@ -19,6 +19,13 @@
         %li= link_to "Oradores",      "#speakers"
         %li= link_to "Inscripciones", "#register"
         %li= link_to "Auspiciantes",  "#sponsorships"
+      %ul.lang
+        - RubyConf::Website::LANGUAGES.each do |code,name|
+          %li{ :class => code }
+            - if language == code
+              %span= name
+            - else
+              = link_to name, "/#{code}"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"

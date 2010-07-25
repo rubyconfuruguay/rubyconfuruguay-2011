@@ -1,7 +1,7 @@
 html, body
   padding: 0
   margin: 0
-  background: #5b5b5b
+  background-color: #5b5b5b
   color: white
   font-family: "Cantarell", sans-serif
 
@@ -10,11 +10,11 @@ a
   &:visited
     color: #aaaaaa
   &:hover
-    background: #aaaaaa
+    background-color: #aaaaaa
     color: #333333
 
 header
-  background: white
+  background-color: white
   padding-top: 16px
   color: black
   display: block
@@ -32,40 +32,62 @@ header
       background: url(/logo.png) no-repeat center center
   h2
     padding: 5px 0
-    background: #942222
+    background-color: #942222
     border-bottom: 3px solid #e11f29
     color: white
     font-family: museo-slab-1, museo-slab-2
 
-nav ul
-  margin: 0 auto
-  padding: 0
-  background: #942222
-  list-style-type: none
-  text-align: center
+nav
+  background-color: #942222
   border-bottom: 2px solid #e11f29
-  li
-    display: inline
-    padding: 4px
-  a
-    color: white
-    padding: 3px 4px
-    text-decoration: none
-    text-transform: lowercase
+  padding-bottom: 1px
+  ul
+    margin: 0 auto
+    width: 800px
+    padding: 0
+    list-style-type: none
+    text-align: left
+    li
+      display: inline
+      padding: 4px
+    a
+      color: white
+      padding: 3px 4px
+      text-decoration: none
+      text-transform: lowercase
+      font-size: 14px
+      cursor: pointer
+      &:visited
+        color: white
+      &:hover
+        background-color: #e11f29 !important
+        color: white
+
+nav ul.lang
+  margin: -24px auto 0
+  text-align: right
+  span, a
     font-size: 14px
-    cursor: pointer
-    &:visited
-      color: white
-    &:hover
-      background: #e11f29
-      color: white
+    padding-left: 22px
+    text-transform: lowercase
+    background-repeat: no-repeat
+  a
+    background-position: 2px 8px
+  span
+    color: #aaa
+    background-position: 2px 4px
+    cursor: default
+  .en a, .en span
+    background-image: url(/flags/en.png)
+  .es a, .es span
+    background-image: url(/flags/es.png)
 
 section
   margin: 36px auto
   display: block
   width: 800px
   h2
-    background: #666666
+    background-color: #666666
     padding: 6px 6px 6px 6px
     margin: 0 -6px
     text-shadow: 1px 1px #5b5b5b
@@ -82,7 +104,7 @@ footer
     margin: 0
 
 #welcome p
-  background: #5293cc
+  background-color: #5293cc
   padding: 8px 12px 12px
   margin: 28px -6px
   font-size: 28px

@@ -3,10 +3,10 @@ require "haml"
 
 module RubyConf
   class Website < Sinatra::Application
-    LANGUAGES = %w(en es)
+    LANGUAGES = { "en" => "English", "es" => "Español" }
 
     def self.check_language!
-      condition { LANGUAGES.include?(params[:lang]) }
+      condition { LANGUAGES.keys.include?(params[:lang]) }
     end
 
     set :public, File.expand_path("../public", __FILE__)
@@ -32,7 +32,7 @@ module RubyConf
 
     def language_from_http
       env["HTTP_ACCEPT_LANGUAGE"].split(",").each do |lang|
-        LANGUAGES.each {|code| return code if lang =~ /^#{code}/ }
+        LANGUAGES.each {|code,_| return code if lang =~ /^#{code}/ }
       end
     end
 
@@ -51,8 +51,8 @@ module RubyConf
     end
 
     def haml(template_or_code, options={}, &block)
-      layout = options.delete(:layout) || :layout
-      options[:layout] = :"#{layout}_#{language}"
+      layout = options.has_key?(:layout) ? options.delete(:layout) : :layout
+      options[:layout] = :"#{layout}_#{language}" if layout
 
       if Symbol === template_or_code
         super(:"#{template_or_code}_#{language}", options, &block)
