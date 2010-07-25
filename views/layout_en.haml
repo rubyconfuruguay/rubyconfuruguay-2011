@@ -10,6 +10,7 @@
     %link{ :rel => "favicon", :href => "/favicon.ico", :type => "image/png" }
     %script{ :type => "text/javascript", :src => "http://use.typekit.com/wee6fcn.js" }
     %script{ :type => "text/javascript" } try{Typekit.load();}catch(e){}
+    = erb :html5shim
   %body
     %nav
       %ul
@@ -26,7 +27,6 @@
               %span= name
             - else
               = link_to name, "/#{code}"
-
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
