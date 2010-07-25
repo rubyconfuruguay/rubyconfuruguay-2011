@@ -6,6 +6,10 @@ module RubyConf
     set :public, File.expand_path("../public", __FILE__)
     set :haml,   :format => :html5
 
+    before do
+      @lang = "es"
+    end
+
     get "/" do
       haml :home
     end
@@ -13,6 +17,16 @@ module RubyConf
     get "/website.css" do
       content_type "text/css"
       sass :website
+    end
+
+    def haml(template_or_code, options={}, &block)
+      layout = options.delete(:layout) || :layout
+      options[:layout] = :"#{layout}_#{@lang}"
+      if Symbol === template_or_code
+        super(:"#{template_or_code}_#{@lang}", options, &block)
+      else
+        super
+      end
     end
 
     def twitter(text = "sígannos en twitter", user = "rubyconfuruguay")
