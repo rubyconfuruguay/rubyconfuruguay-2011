@@ -3,15 +3,17 @@ require "haml"
 
 module RubyConf
   class Website < Sinatra::Application
+    LANGUAGES = %w(en es)
+
+    def self.check_language!
+      condition { LANGUAGES.include?(params[:lang]) }
+    end
+
     set :public, File.expand_path("../public", __FILE__)
     set :haml,   :format => :html5
 
-    before do
-      @lang = "es"
-    end
-
     get "/" do
-      haml :home
+      redirect language
     end
 
     get "/website.css" do
@@ -19,13 +21,18 @@ module RubyConf
       sass :website
     end
 
-    def haml(template_or_code, options={}, &block)
-      layout = options.delete(:layout) || :layout
-      options[:layout] = :"#{layout}_#{@lang}"
-      if Symbol === template_or_code
-        super(:"#{template_or_code}_#{@lang}", options, &block)
-      else
-        super
+    check_language!
+    get "/:lang" do |lang|
+      haml :home
+    end
+
+    def language
+      @lang ||= params[:lang] || language_from_http
+    end
+
+    def language_from_http
+      env["HTTP_ACCEPT_LANGUAGE"].split(",").each do |lang|
+        LANGUAGES.each {|code| return code if lang =~ /^#{code}/ }
       end
     end
 
@@ -40,6 +47,17 @@ module RubyConf
     def link_to(text, url, options={})
       capture_haml do
         haml_tag :a, text, options.merge(:href => url)
+      end
+    end
+
+    def haml(template_or_code, options={}, &block)
+      layout = options.delete(:layout) || :layout
+      options[:layout] = :"#{layout}_#{language}"
+
+      if Symbol === template_or_code
+        super(:"#{template_or_code}_#{language}", options, &block)
+      else
+        super
       end
     end
   end

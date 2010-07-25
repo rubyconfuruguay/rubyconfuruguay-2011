@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title RubyConf Uruguay 2010
+    %meta{ :"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
+    %meta{ :"http-equiv" => "Content-Language", :content => "es-UY" }
+    %link{ :rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Cantarell:regular,bold", :type => "text/css" }
+    %link{ :rel => "stylesheet", :href => "/website.css", :type => "text/css" }
+    %link{ :rel => "home", :href => "/" }
+    %link{ :rel => "favicon", :href => "/favicon.ico", :type => "image/png" }
+    %script{ :type => "text/javascript", :src => "http://use.typekit.com/wee6fcn.js" }
+    %script{ :type => "text/javascript" } try{Typekit.load();}catch(e){}
+  %body
+    %nav
+      %ul
+        %li= link_to "Para quiénes",  "#audience"
+        %li= link_to "Cuándo",        "#when"
+        %li= link_to "Dónde",         "#where"
+        %li= link_to "Oradores",      "#speakers"
+        %li= link_to "Inscripciones", "#register"
+        %li= link_to "Auspiciantes",  "#sponsorships"
+
+    %header
+      %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
+      %h2 Conferencia regional de Ruby, Rails, y metodologías ágiles
+    %section#content
+      = yield
+    %footer
+      %p
+        ©2010 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
+        con el apoyo de #{link_to "Cubox", "http://cuboxsa.com"} y #{link_to "WyeWorks", "http://wyeworks.com"}
+      %p #{email "Envíanos un email", "info@rubyconfuruguay.org"} o #{twitter}
+    = erb :analytics if ENV["RACK_ENV"] == "production"
