@@ -23,13 +23,14 @@ module RubyConf
     end
 
     def language
-      @lang ||= params[:lang] || language_from_http
+      @lang ||= params[:lang] || language_from_http || "en"
     end
 
     def language_from_http
       env["HTTP_ACCEPT_LANGUAGE"].split(",").each do |lang|
-        LANGUAGES.each {|code,_| return code if lang =~ /^#{code}/ }
+        %w(en es).each {|code| return code if lang =~ /^#{code}/ }
       end
+      nil
     end
 
     def twitter(text="sígannos en twitter", user="rubyconfuruguay")
