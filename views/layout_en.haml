@@ -4,38 +4,59 @@
     %title RubyConf Uruguay 2010
     %meta{ :"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
     %meta{ :"http-equiv" => "Content-Language", :content => "es-UY" }
-    %link{ :rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Cantarell:regular,bold", :type => "text/css" }
+    %link{ :rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Molengo:regular", :type => "text/css" }
     %link{ :rel => "stylesheet", :href => "/website.css", :type => "text/css" }
     %link{ :rel => "home", :href => "/" }
     %link{ :rel => "favicon", :href => "/favicon.ico", :type => "image/png" }
-    %script{ :type => "text/javascript", :src => "http://use.typekit.com/wee6fcn.js" }
-    %script{ :type => "text/javascript" } try{Typekit.load();}catch(e){}
-    = erb :html5shim
+    /[if lt IE 9]
+      %script{ :type => "text/javascript", :src => "http://html5shim.googlecode.com/svn/trunk/html5.js" }
   %body
     %nav
       %ul
+        %li.lang
+          %ul
+            - RubyConf::Website::LANGUAGES.each do |code,name|
+              %li{ :class => code }
+                - if language == code
+                  %span= name
+                - else
+                  = link_to name, "/#{code}"
         %li= link_to "Audience",     "#audience"
         %li= link_to "When",         "#when"
         %li= link_to "Where",        "#where"
         %li= link_to "Speakers",     "#speakers"
         %li= link_to "Registration", "#register"
-        %li= link_to "Sponsors",     "#sponsorships"
-      %ul.lang
-        - RubyConf::Website::LANGUAGES.each do |code,name|
-          %li{ :class => code }
-            - if language == code
-              %span= name
-            - else
-              = link_to name, "/#{code}"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
-      %h2 A Regional Conference about Ruby, Rails, and Agile Methodologies
-    %section#content
+      %div
+        %ul.highlight
+          %li
+            %h2
+              Regional conference about
+              %br
+              %strong Ruby, Rails, and Agile Methodologies
+          %li
+            %h3
+              = succeed %Q(<span class="sup">th</span>) do
+                %time.date(datetime="2010-10-29") 29
+              %span -
+              = succeed %Q(<span class="sup">th</span>) do
+                %time.date(datetime="2010-10-30") 30
+              October
+
+    %div#content.clearFix
+      %aside#sponsorships
+        %h2 Sponsors
+        %p
+          We're looking for sponsors! If you're interested or have a proposal,
+          please don't hesitate to #{email "send us an email"}. We'll have a
+          prospectus with sponsorship plans shortly.
+
       = yield
     %footer
       %p
-        ©2010 Volunteers from the #{link_to "Uruguayan Ruby Users Group", "http://ruguy.org"}
+        ©2010 Volunteers from the #{link_to "Uruguayan Ruby User's Group", "http://ruguy.org"}
         with the support of #{link_to "Cubox", "http://cuboxsa.com"} and #{link_to "WyeWorks", "http://wyeworks.com"}
       %p #{email "Send us an email"} or #{twitter "follow us on twitter"}
     = erb :analytics if ENV["RACK_ENV"] == "production"
