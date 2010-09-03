@@ -34,11 +34,11 @@ module RubyConf
     end
 
     def twitter(text="sígannos en twitter", user="rubyconfuruguay")
-      link_to text, "http://twitter.com/#{user}", :rel => "twitter", :class => "twitter"
+      link_to text, "http://twitter.com/#{user}", :class => "twitter"
     end
 
     def email(text="envíennos un email", address="info@rubyconfuruguay.org")
-      link_to text, "mailto:#{address}", :class => "email", :rel => "email"
+      link_to text, "mailto:#{address}", :class => "email"
     end
 
     def link_to(text, url, options={})
