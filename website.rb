@@ -16,11 +16,6 @@ module RubyConf
       redirect language
     end
 
-    get "/website.css" do
-      content_type "text/css"
-      sass :website
-    end
-
     check_language!
     get "/:lang" do |lang|
       haml :home
