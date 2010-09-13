@@ -20,11 +20,12 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
-        %li= link_to "Para quiénes",  "#audience"
-        %li= link_to "Cuándo",        "#when"
-        %li= link_to "Dónde",         "#where"
-        %li= link_to "Oradores",      "#speakers"
-        %li= link_to "Inscripciones", "#register"
+        %li= link_to "Patrocinantes", "/#{language}/sponsors#welcome"
+        %li= link_to "Para quiénes",  "/#{language}#audience"
+        %li= link_to "Cuándo",        "/#{language}#when"
+        %li= link_to "Dónde",         "/#{language}#where"
+        %li= link_to "Oradores",      "/#{language}#speakers"
+        %li= link_to "Inscripciones", "/#{language}#register"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
@@ -48,8 +49,7 @@
         %p
           ¡Estamos buscando auspiciantes! Si les interesa o tienen alguna
           propuesta, no duden en #{email "enviarnos un mail"} para conversarla.
-          En breve vamos a tener un prospecto con planes para auspiciar el
-          evento.
+          Por favor vea nuestros #{link_to "planes para sponsors", "/#{language}/sponsors#welcome"}.
 
       = yield
     %footer

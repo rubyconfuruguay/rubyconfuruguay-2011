@@ -20,11 +20,12 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
-        %li= link_to "Audience",     "#audience"
-        %li= link_to "When",         "#when"
-        %li= link_to "Where",        "#where"
-        %li= link_to "Speakers",     "#speakers"
-        %li= link_to "Registration", "#register"
+        %li= link_to "Sponsors",     "/#{language}/sponsors#welcome"
+        %li= link_to "Audience",     "/#{language}#audience"
+        %li= link_to "When",         "/#{language}#when"
+        %li= link_to "Where",        "/#{language}#where"
+        %li= link_to "Speakers",     "/#{language}#speakers"
+        %li= link_to "Registration", "/#{language}#register"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
@@ -49,8 +50,8 @@
         %h2 Sponsors
         %p
           We're looking for sponsors! If you're interested or have a proposal,
-          please don't hesitate to #{email "send us an email"}. We'll have a
-          prospectus with sponsorship plans shortly.
+          please don't hesitate to #{email "send us an email"}. Please take a
+          look at our #{link_to "sponsors plans", "/#{language}/sponsors#welcome"}.
 
       = yield
     %footer

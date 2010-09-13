@@ -22,6 +22,14 @@ module RubyConf
       haml :home
     end
 
+    get "/sponsors" do
+      redirect "#{language}/sponsors"
+    end
+
+    get "/:lang/sponsors" do |lang|
+      haml :sponsors
+    end
+
     def language
       @lang ||= params[:lang] || language_from_http || "en"
     end

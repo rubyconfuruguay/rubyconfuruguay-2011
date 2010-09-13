@@ -91,7 +91,7 @@ FF (only pc?)
 	#where ul.pictures li:nth-child(2){left: 20%;-webkit-transform: rotate(5deg); -moz-transform: rotate(5deg);}
 		#where ul.pictures li img{ border: 5px solid white; -moz-box-shadow: 4px 4px 0.5 #333333; -webkit-box-shadow: 1px 1px 4px #333333; margin-right: 21px; }
 
-#speakers{background: transparent url(../images/div_shadow.png) no-repeat center bottom;margin-bottom: 20px;}
+#speakers, #party{background: transparent url(../images/div_shadow.png) no-repeat center bottom;margin-bottom: 20px;}
 
 #register{background-color: rgba(255,217,127,.1); border-radius:5px;-moz-border-radius:5px;width: 40%; display: inline;padding: 0;}
 	#register h2{font-family: helvetica;text-shadow: 1px 1px 1px #1c2927;letter-spacing: -1px;width: auto;height: auto;text-transform: uppercase;font-size: 26px;font-weight: bold;margin: 0 0 5px 0; color: #fff1cf;background-color: transparent;background-image: none;padding: 20px 15px 0 15px;}
