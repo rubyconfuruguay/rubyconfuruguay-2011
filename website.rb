@@ -10,6 +10,16 @@ module RubyConf
       condition { LANGUAGES.keys.include?(params[:lang]) }
     end
 
+    def self.page(path, &block)
+      path = "/" + path.gsub(/^\//, '')
+
+      get path do
+        redirect "#{language}#{path}"
+      end
+
+      get "/:lang#{path}", &block
+    end
+
     set :public, File.expand_path("../public", __FILE__)
     set :haml,   :format => :html5
 
@@ -18,16 +28,16 @@ module RubyConf
     end
 
     check_language!
-    get "/:lang" do |lang|
+    get "/:lang" do
       haml :home
     end
 
-    get "/sponsors" do
-      redirect "#{language}/sponsors"
+    page "sponsors" do
+      haml :sponsors
     end
 
-    get "/:lang/sponsors" do |lang|
-      haml :sponsors
+    page "speakers" do
+      haml :speakers
     end
 
     def language
@@ -39,6 +49,10 @@ module RubyConf
         %w(en es).each {|code| return code if lang =~ /^#{code}/ }
       end
       nil
+    end
+
+    def speaker_twitter(user)
+      "Twitter: " + link_to("@#{user}", "http://twitter.com/#{user}")
     end
 
     def twitter(text="sígannos en twitter", user="rubyconfuruguay")

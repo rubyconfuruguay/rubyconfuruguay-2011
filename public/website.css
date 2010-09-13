@@ -66,7 +66,12 @@ section {display: block; width: 695px;border: none; background-image: none;heigh
   
   section hr{margin: 0;display: block;height: 10px; width: 240px;border: none; background:transparent url(../images/h_shadow.png) no-repeat left top;}
 	
-	
+  #translation { margin-top: -30px; }
+  #speakers { margin-top: -40px; padding-bottom: 40px }
+  #speakers .speaker { position: relative; padding-top: 10px; min-height: 100px; }
+  #speakers .speaker p { margin-left: 80px; }
+  #speakers .speaker h2 { width: 200px; margin-top: 20px; }
+  #speakers .speaker .avatar { position: absolute; top: 85px; border: 5px solid white; -moz-box-shadow: 4px 4px 0.5 #333333; -webkit-box-shadow: 1px 1px 4px #333333; }
 /*
 shadowsWorkArounds - only Safari	
 background: url(../images/shadow_left.png) top left no-repeat, url(../images/shadow_right.png) top right no-repeat;
