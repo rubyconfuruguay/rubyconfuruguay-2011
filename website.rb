@@ -40,6 +40,10 @@ module RubyConf
       haml :speakers
     end
 
+    page "where" do
+      haml :where
+    end
+
     def language
       @lang ||= params[:lang] || language_from_http || "en"
     end

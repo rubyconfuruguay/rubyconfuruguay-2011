@@ -7,6 +7,8 @@
     %link{ :rel => "stylesheet", :href => "/website.css" }
     %link{ :rel => "home", :href => "/" }
     %link{ :rel => "icon", :href => "/favicon.ico" }
+    %script{ :src => "http://code.jquery.com/jquery-1.4.2.min.js" }
+    %script{ :src => "/javascripts/application.js" }
     /[if lt IE 9]
       %script{ :src => "http://html5shim.googlecode.com/svn/trunk/html5.js" }
   %body
@@ -23,7 +25,7 @@
         %li= link_to "Sponsors",      "/#{language}/sponsors#welcome"
         %li= link_to "Para quiénes",  "/#{language}#audience"
         %li= link_to "Cuándo",        "/#{language}#when"
-        %li= link_to "Dónde",         "/#{language}#where"
+        %li= link_to "Dónde",         "/#{language}/where"
         %li= link_to "Oradores",      "/#{language}/speakers"
         %li= link_to "Inscripciones", "/#{language}#register"
 
