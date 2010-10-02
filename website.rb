@@ -22,6 +22,7 @@ module RubyConf
 
     set :public, File.expand_path("../public", __FILE__)
     set :haml,   :format => :html5
+    enable :static
 
     get "/" do
       redirect language
@@ -67,7 +68,8 @@ module RubyConf
       link_to text, "mailto:#{address}", :class => "email"
     end
 
-    def link_to(text, url, options={})
+    def link_to(text, url=nil, options={}, &block)
+      url, text = text, capture_haml(&block) if url.nil?
       capture_haml do
         haml_tag :a, text, options.merge(:href => url)
       end
