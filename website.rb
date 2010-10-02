@@ -49,7 +49,7 @@ module RubyConf
     end
 
     def language_from_http
-      env["HTTP_ACCEPT_LANGUAGE"].split(",").each do |lang|
+      env["HTTP_ACCEPT_LANGUAGE"].to_s.split(",").each do |lang|
         %w(en es).each {|code| return code if lang =~ /^#{code}/ }
       end
       nil
