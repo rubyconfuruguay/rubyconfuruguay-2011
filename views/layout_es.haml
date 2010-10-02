@@ -49,8 +49,17 @@
       %aside#sponsorships
         %h2 Auspiciantes
 
-        = link_to "http://cuboxsa.com" do
-          %img{ :alt => "Cubox", :src => "/sponsors/cubox.png" }
+        %ul.sponsor_logos
+          %li
+            = link_to "http://cuboxsa.com" do
+              %img{ :alt => "Cubox", :src => "/sponsors/cubox.png" }
+          %li
+            = link_to "http://genexus.com" do
+              %img{ :alt => "Artech", :src => "/sponsors/artech.png" }
+          %li
+            = link_to "http://github.com" do
+              %img{ :alt => "Github", :src => "/sponsors/github.png" }
+
 
         %p
           ¡Estamos buscando auspiciantes! Si les interesa o tienen alguna

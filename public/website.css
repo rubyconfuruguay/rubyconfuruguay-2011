@@ -8,6 +8,14 @@ a {  color: white; }
   a:visited {   color: #aaaaaa; }
   a:hover {background-color: #aaaaaa; color: #333333; }
 
+.sponsor_logos {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.sponsor_logos a:hover { background: none; color: inherit; }
+
 nav {display:block; height:50px; background-color: #516a74;-webkit-box-shadow: 0px 5px 2px rgba(0,0,0,.2); -moz-box-shadow: -5px 5px 5px rgba(0,0,0,.2);}/*BUG SOMBRA FF  */
   nav ul { margin: 0 auto; width: 960px; padding: 0; list-style-type: none; text-align: right;}
     nav ul li {/*display: inline;*/ position: relative; float: right;}
