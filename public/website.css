@@ -1,4 +1,5 @@
 section, article, header, footer, nav, aside, hgroup{display: block;}
+img { border: 0 none; }
 
 html{ background:transparent url(../images/bg.gif) repeat;}
 body {  background:transparent url(../images/map.png) no-repeat center top;}  
