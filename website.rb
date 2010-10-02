@@ -22,7 +22,6 @@ module RubyConf
 
     set :public, File.expand_path("../public", __FILE__)
     set :haml,   :format => :html5
-    enable :static
 
     get "/" do
       redirect language
