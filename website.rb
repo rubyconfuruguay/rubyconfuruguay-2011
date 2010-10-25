@@ -40,6 +40,10 @@ module RubyConf
       haml :speakers
     end
 
+    page "agenda" do
+      haml :agenda
+    end
+
     page "where" do
       haml :where
     end
