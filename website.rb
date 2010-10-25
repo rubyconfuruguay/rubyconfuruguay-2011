@@ -14,7 +14,7 @@ module RubyConf
       path = "/" + path.gsub(/^\//, '')
 
       get path do
-        redirect "/#{language}#{path}"
+        redirect "#{language}#{path}"
       end
 
       get "/:lang#{path}", &block
