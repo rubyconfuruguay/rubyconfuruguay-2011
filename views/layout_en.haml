@@ -51,16 +51,7 @@
       %aside#sponsorships
         %h2 Sponsors
 
-        %ul.sponsor_logos
-          %li
-            = link_to "http://cuboxsa.com" do
-              %img{ :alt => "Cubox", :src => "/sponsors/cubox.png" }
-          %li
-            = link_to "http://genexus.com" do
-              %img{ :alt => "Artech", :src => "/sponsors/artech.png" }
-          %li
-            = link_to "http://github.com" do
-              %img{ :alt => "Github", :src => "/sponsors/github.png" }
+        = erb :sponsor_logos
 
         %p
           We're looking for sponsors! If you're interested or have a proposal,

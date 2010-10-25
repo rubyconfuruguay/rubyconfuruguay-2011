@@ -78,7 +78,9 @@ module RubyConf
       layout = options.has_key?(:layout) ? options.delete(:layout) : :layout
       options[:layout] = :"#{layout}_#{language}" if layout
 
-      if Symbol === template_or_code
+      skip_translation = options.delete(:skip_transation)
+
+      if Symbol === template_or_code && !skip_translation
         super(:"#{template_or_code}_#{language}", options, &block)
       else
         super

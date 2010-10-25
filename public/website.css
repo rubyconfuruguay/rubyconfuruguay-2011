@@ -9,10 +9,14 @@ a {  color: white; }
   a:hover {background-color: #aaaaaa; color: #333333; }
 
 .sponsor_logos {
+  background:#fff;
   list-style-type: none;
   padding: 0;
   margin: 0;
   text-align: center;
+}
+.sponsor_logos li{
+  margin-bottom: 1em;
 }
 .sponsor_logos a:hover { background: none; color: inherit; }
 
