@@ -48,6 +48,10 @@ module RubyConf
       haml :where
     end
 
+    page "events" do
+      haml :events
+    end
+
     def language
       @lang ||= params[:lang] || language_from_http || "en"
     end
