@@ -1,7 +1,7 @@
 !!!
 %html(lang="es-UY")
   %head
-    %title RubyConf Uruguay 2010
+    %title RubyConf Uruguay 2011
     %meta(charset="utf-8")
     %link{ :rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Molengo:regular" }
     %link{ :rel => "stylesheet", :href => "/website.css" }
@@ -22,12 +22,6 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
-        %li= link_to "Eventos",      "/#{language}/events"
-        %li= link_to "Para quiénes",  "/#{language}#audience"
-        %li= link_to "Dónde",         "/#{language}/where"
-        %li= link_to "Agenda",        "/#{language}/agenda"
-        %li= link_to "Oradores",      "/#{language}/speakers"
-        %li= link_to "Inscripciones", "/#{language}#register"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/", :rel => "home"
@@ -40,10 +34,10 @@
               %strong Ruby, Rails, y metodologías ágiles
           %li
             %h3
-              %time.date(datetime="2010-10-29") 29
+              %time.date(datetime="2011-11-11") 11
               %span -
-              %time.date(datetime="2010-10-30") 30
-              de Octubre
+              %time.date(datetime="2011-11-12") 12
+              de Noviembre
 
     %div#content.clearFix
       %aside#sponsorships
@@ -54,12 +48,11 @@
         %p
           ¡Estamos buscando auspiciantes! Si les interesa o tienen alguna
           propuesta, no duden en #{email "enviarnos un mail"} para conversarla.
-          Por favor vea nuestros #{link_to "planes para sponsors", "/#{language}/sponsors#welcome"}.
 
       = yield
     %footer
       %p
-        ©2010 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
+        ©2011 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
         con el apoyo de #{link_to "Cubox", "http://cuboxsa.com"} y #{link_to "WyeWorks", "http://wyeworks.com"}
       %p #{email "Envíennos un email"} o #{twitter}
     = erb :analytics if ENV["RACK_ENV"] == "production"
