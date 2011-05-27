@@ -50,9 +50,9 @@ header { display:block; height:245px; border-bottom:1px solid #2d4047;
   header h1,header h2,header h3{ margin:0px;}
   header h1 { width:268px; height: 205px; left:50%; top:0px; margin-left:-480px; position: absolute;
   	-webkit-box-shadow: 0px 5px 5px #192529; -moz-box-shadow: 0px 5px 5px #192529;}
-    header h1 a { width:268px; height: 205px; display: block; background: white url(../brand/logo.png) no-repeat center center;
+    header h1 a { width:268px; height: 205px; display: block; background: white url(../brand/logo-2011.png) no-repeat center center;
 	  	text-indent: -9999em; }
-   	  header h1 a:hover { background: white url(../brand/logo.png) no-repeat center center; }
+   	  header h1 a:hover { background: white url(../brand/logo-2011.png) no-repeat center center; }
 	header ul.highlight{padding: 0;margin:0 0 0 50%;padding-top: 17px; list-style: none;}
 		header ul.highlight li:first-child{height: 111px;background: transparent url(../images/red_corner.png) no-repeat left bottom; box-shadow: 0px 4px 3px #000;}
 		header ul.highlight li:last-child{margin-top:-8px ;background: transparent url(../images/blue_corner.png) no-repeat left bottom;}
