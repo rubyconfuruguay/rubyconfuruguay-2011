@@ -1,3 +1,3 @@
-require "website"
+require "./website"
 
 run RubyConf::Website
