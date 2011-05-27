@@ -16,7 +16,7 @@ module RubyConf
       path = "/" + path.gsub(/^\//, '')
 
       get path do
-        redirect "#{language}#{path}"
+        redirect "/#{language}#{path}"
       end
 
       get "/:lang#{path}", &block
@@ -26,7 +26,7 @@ module RubyConf
     set :haml,   :format => :html5
 
     get "/" do
-      redirect language
+      redirect "/#{language}"
     end
 
     check_language!
