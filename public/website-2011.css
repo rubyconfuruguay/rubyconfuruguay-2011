@@ -138,6 +138,7 @@ nav li.lang li {
   display: block;
 }
 nav li.lang span {
+
   background: red;
   width: 20px;
   height: 20px;
@@ -442,7 +443,7 @@ section hr {
   color: #fff1cf;
   background-color: transparent;
   background-image: none;
-  padding: 20px 15px 0 15px;
+  padding: 12px 15px 0 15px;
   box-shadow: none;
 }
 #register .title {
