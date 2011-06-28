@@ -34,14 +34,31 @@ a:hover {
   color: #333333;
 }
 .sponsor_logos {
-  background: #fff;
+  width: 210px;
+  background-color: #fff;
   list-style-type: none;
-  padding: 0;
+  padding: 7px 0;
   margin: 0;
   text-align: center;
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;  
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
+  box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
 }
 .sponsor_logos li {
   margin-bottom: 1em;
+}
+.sponsor_logos li:last-child {
+  margin-bottom: 0;
+}
+.sponsor_logos a,
+.sponsor_logos img {
+  display: block;
 }
 .sponsor_logos a:hover {
   background: none;
@@ -167,7 +184,13 @@ header {
   display: block;
   height: 245px;
   border-bottom: 1px solid #2d4047;
-  background: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 600, from(rgba(142,191,210,.2)), to(rgba(0,0,0,.3)));
+  background-image: -moz-gradient-radial(50% 0%, 0, 50% 0%, 600,(rgba(142,191,210,.2),(rgba(0,0,0,.3));
+  background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 600, from(rgba(142,191,210,.2)), to(rgba(0,0,0,.3)));
+
+
+/*background-image:    -moz-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);*/
+/*background-image: -webkit-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);*/
+
 }
 header h1,
 header h2,
@@ -488,7 +511,7 @@ footer {
   clear: both;
   display: block;
   margin: 0 auto;
-  border-top: 1px solid #777777;
+  border-top: 1px solid #2D4047;
   font-size: 14px;
   padding: 8px 6px;
   text-align: center;
