@@ -16,7 +16,7 @@
       %ul
         %li.lang
           %ul
-            - RubyConf::Website::LANGUAGES.each do |code,name|
+            - RubyConf::Website.languages.each do |code,name|
               %li{ :class => code }
                 - if language == code
                   %span= name
@@ -45,7 +45,7 @@
 
         %h2 Auspiciantes
 
-        = erb :sponsor_logos
+        = erb :sponsor_logos, skip_i18n: true
 
         %p
           ¡Estamos buscando auspiciantes! Si les interesa o tienen alguna
@@ -57,4 +57,4 @@
         ©2011 Voluntarios del #{link_to "Grupo de Usuarios de Ruby de Uruguay", "http://ruguy.org"}
         con el apoyo de #{link_to "Cubox", "http://cuboxsa.com"} y #{link_to "WyeWorks", "http://wyeworks.com"}
       %p #{email "Envíennos un email"} o #{twitter}
-    = erb :analytics if ENV["RACK_ENV"] == "production"
+    = erb :analytics, skip_i18n: true if ENV["RACK_ENV"] == "production"

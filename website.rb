@@ -3,66 +3,41 @@
 require "bundler/setup"
 require "sinatra/base"
 require "haml"
+require "sinatra/ghetto_i18n"
 
 module RubyConf
   class Website < Sinatra::Application
-    LANGUAGES = { "en" => "English", "es" => "Español" }
+    register Sinatra::GhettoI18n
 
-    def self.check_language!
-      condition { LANGUAGES.keys.include?(params[:lang]) }
+    set :public,    File.expand_path("../public", __FILE__)
+    set :haml,      :format => :html5
+    set :languages, "en" => "English", "es" => "Español"
+    set :i18n_view_format do |view, lang|
+      :"#{view}_#{lang}"
     end
 
-    def self.page(path, &block)
-      path = "/" + path.gsub(/^\//, '')
-
-      get path do
-        redirect "/#{language}#{path}"
-      end
-
-      get "/:lang#{path}", &block
-    end
-
-    set :public, File.expand_path("../public", __FILE__)
-    set :haml,   :format => :html5
-
-    get "/" do
-      redirect "/#{language}"
-    end
-
-    check_language!
-    get "/:lang" do
+    home do
       haml :home
     end
 
-    page "sponsors" do
+    get "sponsors" do
       haml :sponsors
     end
 
-    page "speakers" do
+    get "speakers" do
       haml :speakers
     end
 
-    page "agenda" do
+    get "agenda" do
       haml :agenda
     end
 
-    page "where" do
+    get "where" do
       haml :where
     end
 
-    page "events" do
+    get "events" do
       haml :events
-    end
-
-    def language
-      @lang ||= params[:lang] || language_from_http || "en"
-    end
-
-    def language_from_http
-      env["HTTP_ACCEPT_LANGUAGE"].to_s.split(",").each do |lang|
-        %w(en es).each {|code| return code if lang =~ /^#{code}/ }
-      end
-      nil
     end
 
     def speaker_twitter(user)
@@ -81,19 +56,6 @@ module RubyConf
       url, text = text, capture_haml(&block) if url.nil?
       capture_haml do
         haml_tag :a, text, options.merge(:href => url)
-      end
-    end
-
-    def haml(template_or_code, options={}, &block)
-      layout = options.has_key?(:layout) ? options.delete(:layout) : :layout
-      options[:layout] = :"#{layout}_#{language}" if layout
-
-      skip_translation = options.delete(:skip_transation)
-
-      if Symbol === template_or_code && !skip_translation
-        super(:"#{template_or_code}_#{language}", options, &block)
-      else
-        super
       end
     end
   end

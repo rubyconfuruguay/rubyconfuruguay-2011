@@ -16,7 +16,7 @@
       %ul
         %li.lang
           %ul
-            - RubyConf::Website::LANGUAGES.each do |code,name|
+            - RubyConf::Website.languages.each do |code,name|
               %li{ :class => code }
                 - if language == code
                   %span= name
@@ -54,7 +54,7 @@
 
         %h2 Sponsors
 
-        = erb :sponsor_logos
+        = erb :sponsor_logos, skip_i18n: true
 
         %p
           We're looking for sponsors! If you're interested or have a proposal,
@@ -66,4 +66,4 @@
         ©2011 Volunteers from the #{link_to "Uruguayan Ruby User's Group", "http://ruguy.org"}
         with the support of #{link_to "Cubox", "http://cuboxsa.com"} and #{link_to "WyeWorks", "http://wyeworks.com"}
       %p #{email "Send us an email"} or #{twitter "follow us on twitter"}
-    = erb :analytics if ENV["RACK_ENV"] == "production"
+    = erb :analytics, skip_i18n: true if ENV["RACK_ENV"] == "production"
