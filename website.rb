@@ -12,9 +12,6 @@ module RubyConf
     set :public,    File.expand_path("../public", __FILE__)
     set :haml,      :format => :html5
     set :languages, "en" => "English", "es" => "Español"
-    set :i18n_view_format do |view, lang|
-      :"#{view}_#{lang}"
-    end
 
     home do
       haml :home
