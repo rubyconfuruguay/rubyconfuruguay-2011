@@ -184,13 +184,7 @@ header {
   display: block;
   height: 245px;
   border-bottom: 1px solid #2d4047;
-  background-image: -moz-gradient-radial(50% 0%, 0, 50% 0%, 600,(rgba(142,191,210,.2),(rgba(0,0,0,.3));
   background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 600, from(rgba(142,191,210,.2)), to(rgba(0,0,0,.3)));
-
-
-/*background-image:    -moz-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);*/
-/*background-image: -webkit-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);*/
-
 }
 header h1,
 header h2,
