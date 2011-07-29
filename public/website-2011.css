@@ -398,7 +398,6 @@ section hr {
   float: right;
   font-size: .825em;
   border-top: 1px solid #1b2e35;
-  margin: 160px 20px 0 0;
   padding: 6px 0 0 0;
 }
 #where ul.pictures {
@@ -407,7 +406,7 @@ section hr {
   margin: 0;
   height: 200px;
   padding: 7px 0 0 0;
-}	
+}
 #where ul.pictures li {
   position: absolute;
 }
@@ -657,4 +656,12 @@ footer p {
 }
 .hackday p, .party p {
   margin: 6px 0 18px;
+}
+
+.galleria-stage {
+  padding: 50px
+}
+
+.galleria-stage img{
+  border: 5px solid white;
 }
