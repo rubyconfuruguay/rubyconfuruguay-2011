@@ -20,3 +20,11 @@
 %section#register
   %h2 Registration
   %p.title Registrations will open soon!
+  %form.google{:action => "https://spreadsheets.google.com/a/rubyconfuruguay.org/spreadsheet/formResponse?formkey=dHhKYXdtVTB1NjRMWkltNHhkT2ExNUE6MQ&ifq", :method => "POST"}
+    %p
+      Enter your email to hear from the organizers:
+      %input{:type => "text", :name => "entry.0.single"}
+      %input{:type => "submit", :name => "submit", :value => "Subscribe"}
+  .success-message
+    %p
+      Thank you, we'll keep you posted.

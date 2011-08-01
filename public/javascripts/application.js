@@ -1,6 +1,7 @@
 $(document).ready(function() {
   set_up_google_map_links();
   start_flickr_gallery();
+  set_up_google_forms();
 });
 
 function rand(from, to){
@@ -47,3 +48,18 @@ function show_map_on_the_iframe(link) {
   }
 }
 
+
+function set_up_google_forms() {
+  $('form.google').each(function(){
+    var id = 'frame_' + (new Date()).getTime();
+    $(this).after('<iframe id="'+id+'"></iframe>');
+    $("#"+id).hide();
+    $(this).attr('target', id);
+    $(this).siblings('.success-message').hide();
+    $(this).submit(function(){
+      $(this).hide();
+      $(this).siblings('.success-message').show();
+    })
+  });
+
+}
