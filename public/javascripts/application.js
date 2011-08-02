@@ -20,6 +20,7 @@ function start_flickr_gallery() {
         $(e.imageTarget).rotate({animateTo: random_number})
       })
     },
+    autoplay: 5000,
     showInfo: false,
     showCounter: false,
     thumbnails: false,
