@@ -34,31 +34,45 @@ a:hover {
   color: #333333;
 }
 .sponsor_logos {
-  width: 210px;
+  width: 200px;
   background-color: #fff;
   list-style-type: none;
   padding: 7px 0;
-  margin: 0;
+  margin-bottom: 10px;
   text-align: center;
-  -moz-border-radius: 5px; 
-  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
-  background-clip: padding-box;  
-  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
-  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
-  box-shadow: 0px 0px 4px rgba(0,0,0,.4); 
+  background-clip: padding-box;
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,.4);
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,.4);
+  box-shadow: 0px 0px 4px rgba(0,0,0,.4);
 }
+
+.sponsor_logos.silver {
+  border: 5px solid silver;
+}
+
+.sponsor_logos.bronze {
+  border: 5px solid #9C6963;
+}
+
+.sponsor_logos.supports {
+  border: 5px solid #99CC33;
+}
+
 .sponsor_logos li {
   margin-bottom: 1em;
 }
 .sponsor_logos li:last-child {
   margin-bottom: 0;
 }
-.sponsor_logos a,
 .sponsor_logos img {
   display: block;
+  margin: auto;
+  padding: 5px 0;
 }
 .sponsor_logos a:hover {
   background: none;
@@ -664,4 +678,8 @@ footer p {
 
 .galleria-stage img{
   border: 5px solid white;
+}
+
+.hidden {
+  display: none;
 }
