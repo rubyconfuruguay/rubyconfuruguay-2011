@@ -352,21 +352,25 @@ section hr {
 #speakers .speaker {
   position: relative;
   padding-top: 10px;
-  min-height: 100px;
+  min-height: 150px;
 }
 #speakers .speaker p {
   margin-left: 80px;
 }
 #speakers .speaker h2 {
-  width: 200px;
+  width: 280px;
   margin-top: 20px;
 }
 #speakers .speaker .avatar {
   position: absolute;
-  top: 85px;
+  top: 90px;
   border: 5px solid white;
   -moz-box-shadow: 4px 4px 0.5 #333333;
   -webkit-box-shadow: 1px 1px 4px #333333;
+}
+
+#speakers .speaker .avatar ~ .avatar {
+  top: 200px
 }
 /*
   shadowsWorkArounds - only Safari	
