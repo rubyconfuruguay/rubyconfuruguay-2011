@@ -26,7 +26,7 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
-        //%li= link_to "Llamado a Charlas", "https://spreadsheets.google.com/spreadsheet/viewform?formkey=dGU4OVFBRFFVLWNkLTFFazF5OFNDbmc6MQ"
+        %li= link_to "Oradores",     "/#{language}/speakers"
 
     %header
       %h1= link_to "RubyConf Uruguay", "/#{language}", :rel => "home"

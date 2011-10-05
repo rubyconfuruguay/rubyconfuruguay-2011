@@ -26,13 +26,13 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
+        %li= link_to "Speakers",     "/#{language}/speakers"
       -#
         %li= link_to "Call for Papers", "https://spreadsheets.google.com/spreadsheet/viewform?formkey=dGU4OVFBRFFVLWNkLTFFazF5OFNDbmc6MQ"
         %li= link_to "Events",       "/#{language}/events"
         %li= link_to "Audience",     "/#{language}#audience"
         %li= link_to "Where",        "/#{language}/where"
         %li= link_to "Agenda",       "/#{language}/agenda"
-        %li= link_to "Speakers",     "/#{language}/speakers"
         %li= link_to "Registration", "/#{language}#register"
 
     %header
