@@ -26,6 +26,7 @@
                   %span= name
                 - else
                   = link_to name, "/#{code}"
+        %li= link_to "Schedule",      "/#{language}/agenda"
         %li= link_to "Oradores",      "/#{language}/speakers"
         %li= link_to "Dónde",         "/#{language}/where"
         %li= link_to "Inscripción",   "https://eventioz.com/events/rubyconf-uruguay-2011/registrations/new"
