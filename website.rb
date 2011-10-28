@@ -38,6 +38,7 @@ module RubyConf
         date = date_time.to_date.to_s
         time = date_time.strftime("%H:%M")
         title, summary = presentation.fetch("description").split("\n")
+        summary = summary.join("\n") if summary.is_a?(Array)
 
         @agenda[date] ||= []
         @agenda[date] << { :title => title, :summary => summary, :time => time }
