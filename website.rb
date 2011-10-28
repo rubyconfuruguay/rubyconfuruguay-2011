@@ -3,6 +3,9 @@
 require "bundler/setup"
 require "sinatra/base"
 require "haml"
+require "date"
+require "rest-client"
+require "json"
 require "sinatra/ghetto_i18n"
 
 module RubyConf
@@ -26,6 +29,19 @@ module RubyConf
     end
 
     get "agenda" do
+      json = RestClient.get "https://eventioz.com/events/rubyconf-uruguay-2011/agenda.json"
+      agenda_json = JSON.parse json
+      @agenda = {}
+      agenda_json.each do |talk|
+        presentation = talk.fetch("presentation")
+        date_time = DateTime.parse presentation.fetch("starts_at")
+        date = date_time.to_date.to_s
+        time = date_time.strftime("%H:%M")
+        title, summary = presentation.fetch("description").split("\n")
+
+        @agenda[date] ||= []
+        @agenda[date] << { :title => title, :summary => summary, :time => time }
+      end
       haml :agenda
     end
 

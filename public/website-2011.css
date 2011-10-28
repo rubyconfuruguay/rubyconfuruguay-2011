@@ -716,3 +716,25 @@ footer p {
 .large.awesome, .large.awesome:visited      { font-size: 25px; padding: 8px 14px 9px; }
 .orange.awesome, .orange.awesome:visited { background-color: #ff5c00; }
 .orange.awesome:hover { background-color: #d45500; }
+
+#agenda h3{
+  font-family: 'Molengo', arial;
+  background: #FFD97F url(../images/ruby.png) no-repeat 15px center;
+  font-size: 1.2em;
+  color: black;
+  padding: 10px 10px 10px 45px;
+}
+
+#agenda h4 p{
+}
+
+#agenda h5 p{
+  font-size: 1.5em;
+}
+
+.talk {
+}
+
+.talk .summary p {
+  text-shadow: none;
+}
