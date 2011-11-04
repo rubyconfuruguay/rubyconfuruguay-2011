@@ -32,7 +32,7 @@ module RubyConf
       json = RestClient.get "https://eventioz.com/events/rubyconf-uruguay-2011/agenda.json"
       agenda_json = JSON.parse json
       @agenda = {}
-      agenda_json.each do |talk|
+      agenda_json.each_with_index do |talk, index|
         presentation = talk.fetch("presentation")
         date_time = DateTime.parse presentation.fetch("starts_at")
         date = date_time.to_date.to_s
@@ -41,7 +41,7 @@ module RubyConf
         summary = summary.join("\n") if summary.is_a?(Array)
 
         @agenda[date] ||= []
-        @agenda[date] << { :title => title, :summary => summary, :time => time }
+        @agenda[date] << { :index => index, :title => title, :summary => summary, :time => time }
       end
       haml :agenda
     end

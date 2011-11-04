@@ -17,5 +17,6 @@
         - prior_date = date
         - talks.each do |talk|
           %h4= talk.fetch(:time)
-          %h5= talk.fetch(:title)
+          %h5
+            %a{ :id => talk.fetch(:index), :href => "##{talk.fetch(:index)}" }= talk.fetch(:title)
           .summary= talk.fetch(:summary)
