@@ -54,6 +54,10 @@ module RubyConf
       haml :events
     end
 
+    get 'tw/:id' do
+      redirect "/"
+    end
+
     def speaker_twitter(user)
       "Twitter: " + link_to("@#{user}", "http://twitter.com/#{user}")
     end
